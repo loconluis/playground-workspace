@@ -16,5 +16,5 @@ const argv = yargs
   .alias('help', 'h')
   .argv
 //space
-let x = selectors.getElements(data, argv.search)
-console.log('Array \n', x);
+let x = selectors.find({name: 'root', children: data}, argv.search)
+console.log('Array \n', JSON.stringify(x, undefined, 2));

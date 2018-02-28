@@ -5,16 +5,35 @@ let getElements = (treeData, text) => {
     if (textMatch) {
       console.log('---HICE MATCH---');
       newArr.push(nodo)
-      //return nodo;
     } else {
       if (nodo.children) {
         return getElements(nodo.children, text)
       }
-      //console.log('si no tiene hijos', nodo)
-      //return node;
     }
   })
   return newArr;
 }
 
-module.exports = { getElements }
+let find = (node, text) => {
+  const textMatch = node.name.toLowerCase().includes(text.toLowerCase());
+  if (textMatch) {
+    
+    return node;
+  } else if (node.children) {
+    let newChildren = [];
+    for (let value in node.children) {
+      let aux = find(node.children[value], text);
+      if (aux !== null) {
+        newChildren.push(aux);
+      }
+    }
+    if (newChildren.length > 0) {
+      let auxNodo = node;
+      auxNodo.children = newChildren;
+      return auxNodo;
+    }
+  }
+  return null;
+}
+
+module.exports = { getElements, find }

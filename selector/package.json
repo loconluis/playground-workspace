@@ -1,0 +1,14 @@
+{
+  "name": "selector",
+  "version": "0.0.1",
+  "description": "playing with arrays",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis Locon <luis.locon@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^11.0.0"
+  }
+}

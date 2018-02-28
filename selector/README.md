@@ -41,3 +41,6 @@ It is a console application that runs when running `$ node index.js --search <ST
 | ------ | ------ |
 | --search, -s | It is the argument that receives the word that is going to search for in the array. |
 | --help, -h | Show all the argv permitted |
+
+
+TODO Return parents if the node have

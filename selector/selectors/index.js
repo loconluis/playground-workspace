@@ -1,3 +1,4 @@
+// this only return a one node with data;
 let newArr=[]
 let getElements = (treeData, text) => {
   treeData.map(nodo => {
@@ -14,10 +15,12 @@ let getElements = (treeData, text) => {
   return newArr;
 }
 
+
+// Return all the path to the node match with text
 let find = (node, text) => {
   const textMatch = node.name.toLowerCase().includes(text.toLowerCase());
   if (textMatch) {
-    
+
     return node;
   } else if (node.children) {
     let newChildren = [];

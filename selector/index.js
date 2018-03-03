@@ -16,5 +16,9 @@ const argv = yargs
   .alias('help', 'h')
   .argv
 //space
-let x = selectors.find({name: 'root', children: data}, argv.search)
-console.log('Array \n', JSON.stringify(x, undefined, 2));
+let x = selectors.find({name: 'root', children: data}, argv.search);
+if (!x) {
+  x = []
+  x.children = []
+}
+console.log('Array \n', JSON.stringify(x.children, undefined, 2));

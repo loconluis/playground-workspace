@@ -4,7 +4,7 @@ const data = [
     "nombre": "Estratek",
     "empresa":{
       "_id": "5a9ed779d75eb707a8287c53",
-      "nombre": "Estratek",
+      "nombre": "Estratek2222",
       "pais": "5a9ed770d75eb707a8287c51",
       "moneda": "5a9ed770d75eb707a8287c51"
     },
@@ -13,7 +13,7 @@ const data = [
       "nombre": "Departamento",
       "icono": "fa-star"
     },
-    "areapadre":null,
+    "areapadre":undefined,
     "orden":1,
     "jefe":{
       "_id": "5a9ed779d75eb707a8287c53",
@@ -578,3 +578,5 @@ const data = [
     ]
   }
 ]
+
+module.exports = data

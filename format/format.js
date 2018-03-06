@@ -2,13 +2,9 @@
 // Funcion que hace un map con data que se require
 const data = require('./data/index')
 
-const mappingData = (tData) => {
-  return tData.map(node => {
-    let aux;
-    if(node.children) {
-     aux = newArr(node.children)
-    }
-    newNode = {
+const mappingData = (tData) => (
+  tData.map(node => 
+    ({
       _id: node._id,
       name: node.nombre,
       company: {
@@ -39,12 +35,11 @@ const mappingData = (tData) => {
       expiration: node.vencimiento,
       children: 
         (!!node.children
-            ? [...newArr(node.children)]
+            ? [...mappingData(node.children)]
             : undefined
         )
-    }
-    return newNode
-  })
-}
+    })
+  )
+)
 
-console.log('Calling a func', JSON.stringify(newArr(data), undefined, 2))
+console.log('Calling a func', JSON.stringify(mappingData(data), undefined, 2))

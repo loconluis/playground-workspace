@@ -52,6 +52,7 @@ const data = [
                     params: [],
                     open: '',
                     close: '',
+                    children: []
                   },
                   {
                     orderIndex: 2,

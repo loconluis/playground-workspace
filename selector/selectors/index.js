@@ -22,21 +22,26 @@ let find = (node, text) => {
   if (textMatch) {
 
     return node;
-  } else if (node.children) {
+  } 
+  else if (node.children) {
     let newChildren = [];
     for (let value in node.children) {
       let aux = find(node.children[value], text);
+      // cconsole.log('aux', aux);
       if (aux !== null) {
+
         newChildren.push(aux);
       }
     }
+    //console.log('newChild', newChildren);
     if (newChildren.length > 0) {
       let auxNodo = node;
+      //console.log('node', node);
       auxNodo.children = newChildren;
+      //console.log('auxNodo', auxNodo)
       return auxNodo;
     }
   }
   return null;
 }
-
 module.exports = { getElements, find }

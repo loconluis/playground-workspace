@@ -28,7 +28,8 @@ let find = (node, text) => {
       }
     }
     if (newChildren.length > 0) {
-      let auxNodo = node;
+      let auxNodo = Object.assign({}, node); //node
+      // console.log('Auxnodo', node);
       auxNodo.children = newChildren;
       return auxNodo;
     }

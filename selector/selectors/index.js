@@ -1,3 +1,4 @@
+// this only return a one node with data;
 let newArr=[]
 let getElements = (treeData, text) => {
   treeData.map(nodo => {
@@ -14,27 +15,33 @@ let getElements = (treeData, text) => {
   return newArr;
 }
 
+
+// Return all the path to the node match with text
 let find = (node, text) => {
   const textMatch = node.name.toLowerCase().includes(text.toLowerCase());
   if (textMatch) {
-    
+
     return node;
-  } else if (node.children) {
+  } 
+  else if (node.children) {
     let newChildren = [];
     for (let value in node.children) {
       let aux = find(node.children[value], text);
+      // cconsole.log('aux', aux);
       if (aux !== null) {
+
         newChildren.push(aux);
       }
     }
+    //console.log('newChild', newChildren);
     if (newChildren.length > 0) {
       let auxNodo = Object.assign({}, node); //node
       // console.log('Auxnodo', node);
       auxNodo.children = newChildren;
+      //console.log('auxNodo', auxNodo)
       return auxNodo;
     }
   }
   return null;
 }
-
 module.exports = { getElements, find }

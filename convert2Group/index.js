@@ -18,4 +18,4 @@ const convert2Group = (optionsData, labelKey, valueKey, groupProp) => {
   return optionsGroup
 }
 // The try!
-console.log('lowudjw', JSON.stringify(convert2Group(data, 'name', 'process', 'group'), undefined, 2));
+console.log('New data', JSON.stringify(convert2Group(data, 'name', 'process', 'group'), undefined, 2));

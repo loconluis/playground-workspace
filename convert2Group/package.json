@@ -12,6 +12,6 @@
   "author": "Luis Locon <luis.locon@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.13"
   }
 }
